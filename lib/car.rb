@@ -1,7 +1,7 @@
 require 'date'
 
 class Car
-  attr_reader :make, :model, :year, :msrp
+  attr_reader :make, :model, :year, :msrp, :sold
   attr_accessor :manager_markup
 
   AGE_DEPRECIATION_RATE = 0.05
@@ -11,6 +11,7 @@ class Car
     @model = model
     @year = year
     @msrp = msrp
+    @sold = false
   end
 
   def age_depreciation
