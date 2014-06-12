@@ -30,8 +30,4 @@ class UsedCar < Car
     [(@msrp - age_depreciation - mileage_depreciation - damage_depreciation), 0].max
   end
 
-  def price
-    (value * (1 + manager_markup)).ceil
-  end
-
 end

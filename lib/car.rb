@@ -24,7 +24,7 @@ class Car
   end
 
   def price
-    (value * (1 + manager_markup)).ceil
+    (value * (1 + manager_markup)).floor
   end
 
 end
