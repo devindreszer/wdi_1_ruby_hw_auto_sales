@@ -13,13 +13,17 @@ class Car
     @msrp = msrp
   end
 
-  def age_depreciated_value
+  def age_depreciation
     age = Date.today.year - year
-    [@msrp * (1 - age * @@age_depeciation_rate), 0].max.ceil
+    @msrp * (age * @@age_depeciation_rate)
+  end
+
+  def depreciated_value
+    [(@msrp - age_depreciation), 0 ].max
   end
 
   def price
-    age_depreciated_value * (1 + manager_markup)
+    depreciated_value * (1 + manager_markup)
   end
 
 end
