@@ -11,15 +11,26 @@ class CarLot
 
   def add_car(car)
     @@car_id += 1
-    @cars[@@car_id] = [car.make, car.model, car.year, car.price]
+    @cars[@@car_id] = {
+      make: car.make,
+      model: car.model,
+      year: car.year,
+      price: car.price
+    }
     @@lot_value += car.price
   end
 
-  # def retrieve_car(make, model, year)
-  #   @cars.each do |id, attributes|
-  #     attributes.select |
-  #   end
-  # end
+  def retrieve_cars_by_make(make)
+    @cars.select { |cars, attributes| attributes[:make] == make }
+  end
+
+  def retrieve_cars_by_model(model)
+    @cars.select { |cars, attributes| attributes[:model] == model }
+  end
+
+  def retrieve_cars_by_year(year)
+    @cars.select { |cars, attributes| attributes[:year] == year }
+  end
 
   def lot_value
     @@lot_value
