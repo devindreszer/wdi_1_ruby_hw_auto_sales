@@ -23,7 +23,7 @@ class Car
   end
 
   def price
-    depreciated_value * (1 + manager_markup)
+    (depreciated_value * (1 + manager_markup)).ceil
   end
 
 end
