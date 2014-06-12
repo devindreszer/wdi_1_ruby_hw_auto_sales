@@ -19,12 +19,12 @@ class Car
     @msrp * (age * AGE_DEPRECIATION_RATE)
   end
 
-  def depreciated_value
+  def value
     [(@msrp - age_depreciation), 0 ].max
   end
 
   def price
-    (depreciated_value * (1 + manager_markup)).ceil
+    (value * (1 + manager_markup)).ceil
   end
 
 end
