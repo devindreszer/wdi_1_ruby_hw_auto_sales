@@ -4,7 +4,7 @@ class Car
   attr_reader :make, :model, :year, :msrp
   attr_accessor :manager_markup
 
-  @@depeciation_rate = 0.05
+  @@age_depeciation_rate = 0.05
 
   def initialize(make, model, year, msrp)
     @make = make
@@ -13,13 +13,13 @@ class Car
     @msrp = msrp
   end
 
-  def depreciated_value
+  def age_depreciated_value
     age = Date.today.year - year
-    [(@msrp - age * (@msrp * @@depeciation_rate)), 0].max
+    [@msrp * (1 - age * @@age_depeciation_rate), 0].max.ceil
   end
 
   def price
-    depreciated_value * (1 + manager_markup)
+    age_depreciated_value * (1 + manager_markup)
   end
 
 end
