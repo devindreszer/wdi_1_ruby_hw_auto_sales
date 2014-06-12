@@ -55,6 +55,7 @@ class CarLot
         attributes[:sold] == false)
         attributes[:sold] = true
         @@lot_revenue += attributes[:price]
+        @@lot_value -= attributes[:price]
       end
     end
   end

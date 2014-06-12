@@ -42,4 +42,5 @@ puts honest_toms.retrieve_cars_by_year(1998)
 honest_toms.sold_car(civic)
 puts honest_toms.cars
 puts honest_toms.lot_revenue
+puts honest_toms.lot_value
 puts honest_toms.retrieve_cars_by_sold_status(false)
