@@ -15,7 +15,7 @@ class UsedCar < Car
   end
 
   def mileage_depreciation
-    @msrp * (mileage * MILEAGE_DEPRECIATION_RATE)
+    msrp * (mileage * MILEAGE_DEPRECIATION_RATE)
   end
 
   def damage_depreciation
@@ -27,7 +27,7 @@ class UsedCar < Car
   end
 
   def value
-    [(@msrp - age_depreciation - mileage_depreciation - damage_depreciation), 0].max
+    [(msrp - age_depreciation - mileage_depreciation - damage_depreciation), 0].max
   end
 
 end

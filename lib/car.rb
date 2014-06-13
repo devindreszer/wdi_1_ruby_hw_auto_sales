@@ -19,11 +19,11 @@ class Car
 
   def age_depreciation
     age = Date.today.year - year
-    @msrp * (age * AGE_DEPRECIATION_RATE)
+    msrp * (age * AGE_DEPRECIATION_RATE)
   end
 
   def value
-    [(@msrp - age_depreciation), 0 ].max
+    [(msrp - age_depreciation), 0 ].max
   end
 
   def price
@@ -31,7 +31,7 @@ class Car
   end
 
   def show
-    "Car #{@id}: #{@year} #{@make} #{@model}"
+    "Car #{@id}: #{year} #{make} #{model}"
   end
 
 end
