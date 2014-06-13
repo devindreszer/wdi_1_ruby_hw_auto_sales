@@ -8,7 +8,7 @@ class UsedCar < Car
 
   def initialize(make, model, year, msrp)
     super
-    @damages = {}
+    @damages = []
   end
 
   def damaged?
@@ -16,7 +16,7 @@ class UsedCar < Car
   end
 
   def add_damage(damage)
-    @damages[damage.description] = damage.cost
+    @damages.push(damage)
   end
 
   def mileage_depreciation
@@ -25,8 +25,8 @@ class UsedCar < Car
 
   def damage_depreciation
     damage_cost = 0
-    @damages.each do |damage, cost|
-      damage_cost += cost
+    @damages.each do |damage|
+      damage_cost += damage.cost
     end
     damage_cost
   end
