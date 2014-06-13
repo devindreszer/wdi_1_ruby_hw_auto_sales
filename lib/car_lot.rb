@@ -10,7 +10,7 @@ class CarLot
   end
 
   def add_car(car)
-    @cars.push(car)
+    cars.push(car)
     @@lot_value += car.price
   end
 
@@ -21,19 +21,19 @@ class CarLot
   end
 
   def retrieve_cars_by_make(make)
-    show_cars(cars = @cars.select { |car| car.make == make })
+    show_cars(cars.select { |car| car.make == make })
   end
 
   def retrieve_cars_by_model(model)
-    show_cars(@cars.select { |car| car.model == model })
+    show_cars(cars.select { |car| car.model == model })
   end
 
   def retrieve_cars_by_year(year)
-    show_cars(@cars.select { |car| car.year == year })
+    show_cars(cars.select { |car| car.year == year })
   end
 
   def retrieve_cars_by_sold_status(sold)
-    show_cars(@cars.select { |car| car.sold == sold })
+    show_cars(cars.select { |car| car.sold == sold })
   end
 
   def lot_value
@@ -45,7 +45,7 @@ class CarLot
   end
 
   def sold_car(car)
-    if @cars.include?(car) && car.sold == false
+    if cars.include?(car) && car.sold == false
       car.sold = true
       @@lot_revenue += car.price
       @@lot_value -= car.price

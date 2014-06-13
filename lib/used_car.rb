@@ -16,7 +16,7 @@ class UsedCar < Car
   end
 
   def add_damage(damage)
-    @damages.push(damage)
+    damages.push(damage)
   end
 
   def mileage_depreciation
@@ -25,7 +25,7 @@ class UsedCar < Car
 
   def damage_depreciation
     damage_cost = 0
-    @damages.each do |damage|
+    damages.each do |damage|
       damage_cost += damage.cost
     end
     damage_cost
