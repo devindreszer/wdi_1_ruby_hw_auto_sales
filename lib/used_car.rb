@@ -2,12 +2,17 @@ require_relative 'car.rb'
 
 class UsedCar < Car
   attr_accessor :mileage
+  attr_reader :damages
 
   MILEAGE_DEPRECIATION_RATE = 0.000001
 
   def initialize(make, model, year, msrp)
     super
     @damages = {}
+  end
+
+  def damaged?
+    damages.any?
   end
 
   def add_damage(damage)
