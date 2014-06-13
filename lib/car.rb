@@ -5,7 +5,7 @@ class Car
   attr_accessor :manager_markup, :id, :sold
 
   AGE_DEPRECIATION_RATE = 0.05
-  @@id = 0
+  @@count = 0
 
   def initialize(make, model, year, msrp)
     @make = make
@@ -13,7 +13,8 @@ class Car
     @year = year
     @msrp = msrp
     @sold = false
-    @@id += 1
+    @@count += 1
+    @id = @@count
   end
 
   def age_depreciation
@@ -30,7 +31,7 @@ class Car
   end
 
   def show
-    "Car #{@@id}: #{@year} #{@make} #{@model}"
+    "Car #{@id}: #{@year} #{@make} #{@model}"
   end
 
 end
