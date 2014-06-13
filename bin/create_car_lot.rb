@@ -33,7 +33,7 @@ honest_toms.add_car(civic)
 honest_toms.add_car(accord)
 honest_toms.add_car(element)
 
-puts honest_toms.lot_value
+puts "Initial lot value: #{honest_toms.lot_value}"
 puts
 puts honest_toms.retrieve_cars_by_make('Honda')
 puts
@@ -42,6 +42,7 @@ puts
 puts honest_toms.retrieve_cars_by_year(1998)
 puts
 honest_toms.sold_car(civic)
-puts honest_toms.lot_revenue
-puts honest_toms.lot_value
+puts "#{civic.show} sold!"
+puts "Lot revenue: #{honest_toms.lot_revenue}"
+puts "Lot value: #{honest_toms.lot_value}"
 puts honest_toms.retrieve_cars_by_sold_status(false)

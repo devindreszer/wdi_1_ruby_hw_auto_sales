@@ -1,7 +1,6 @@
 class CarLot
   attr_reader :name, :cars, :lot_value, :lot_revenue
 
-  @@car_id = 0
   @@lot_value = 0
   @@lot_revenue = 0
 
